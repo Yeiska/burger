@@ -1,0 +1,19 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "dating app",
+  "main": "sever.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yeiska/FriendFinder.git"
+  },
+  "author": "Yeiska De La Torre",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yeiska/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/Yeiska/FriendFinder#readme"
+}
