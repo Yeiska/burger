@@ -1,23 +1,17 @@
 //Data
-var friends = require("../data/friends");
 var express = require("express");
+var friends = require("../data/friends.js");
+
 var app = express();
 //Routing
 module.exports = function(app){
     app.get("/api/friends", function(req, res){
         res.json(friends);
     });
-    app.post("/api/friends", function(req, res){
-        if(friends.length < 5){
-            friends.push(req.body);
-            res.json(true);
-        }
-
-    })
 };
 
 app.post("/api/friends", function(req, res){
-    var newfriendScore = req.body.score;
+    var newfriendScore = req.body.scores;
     var scoresArray = [];
     var friendsCount = 0;
     var match = 0;
@@ -30,4 +24,15 @@ app.post("/api/friends", function(req, res){
         scoresArray.push(diff);
     }
 
+    //Find best match after all friends comprare
+    for (var i = 0; i < scoresArray.length; i++){
+        if(scoresArray[i] <= scoresArray[match]){
+            match = i;
+        }
+    }
+    //return match data
+    var bestMatch = friends[match];
+    res.json(bestMatch);
+    //push new best friends into array
+    friends.push(req.body);
 })
