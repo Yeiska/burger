@@ -7,7 +7,7 @@
 ### api Fiends data
 ![Api Friend Data Image](app/public/img/apiFiends.png)
 ### Survey page
-![Survey Image](app/public/img/survey.png)
+![Survey Image](app/public/img/Survey.png)
 ### Match
 ![Match Image](app/public/img/match.png)
 
