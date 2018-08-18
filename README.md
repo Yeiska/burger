@@ -3,13 +3,13 @@
 
 ## Screen Shots
 ### Home page
-![Friend Finder home page Image](img/home.png)
+![Friend Finder home page Image](app/public/img/home.png)
 ### api Fiends data
-![Api Friend Data Image](img/apiFiends.png)
+![Api Friend Data Image](app/public/img/apiFiends.png)
 ### Survey page
-![Survey Image](img/survey.png)
+![Survey Image](app/public/img/survey.png)
 ### Match
-![Match Image](img/match.png)
+![Match Image](app/public/img/match.png)
 
 ## Technologies used
 * Node.js
