@@ -4,14 +4,28 @@
 
 <form class="form">
     <img src="https://media.istockphoto.com/photos/double-cheese-and-bacon-cheeseburger-picture-id511484502?k=6&m=511484502&s=612x612&w=0&h=2d8oTGH_E7KHkd4TIdftWIxjLsBP3CfdF44zy65FD0o=">
+    <div>
+        <ul>
+            {{#each quotes}}
+            <li>
+                <p>
+                    <span class="label"></span> {{this.name?}}
+                </p>
+                <button data-id="{{this.id}}" class="delquote">Delete</button>
+
+                <a href="/{{this.name?}}">Update this quote</a>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
     <div class="formInput">
         <label for="burger">Add a burger that you want to eat!</label>
         <input type="text" id="burger" name="burger">
     </div>
 
     <div class="formInput">
-        
-        <button type="submit">Submit</button>
+
+        <button type="submit" class="addBurger">Submit</button>
         <label for="devoured"></label>
     </div>
 </form>
