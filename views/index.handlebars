@@ -3,29 +3,44 @@
 <h2>Add a Burger</h2>
 
 <form class="form">
-    <img src="https://media.istockphoto.com/photos/double-cheese-and-bacon-cheeseburger-picture-id511484502?k=6&m=511484502&s=612x612&w=0&h=2d8oTGH_E7KHkd4TIdftWIxjLsBP3CfdF44zy65FD0o=">
+    <img src="https://media.istockphoto.com/photos/double-cheese-and-bacon-cheeseburger-picture-id511484502?k=6&m=511484502&s=612x612&w=0&h=2d8oTGH_E7KHkd4TIdftWIxjLsBP3CfdF44zy65FD0o=" id="myBurger"">
     <div>
         <ul>
-            {{#each quotes}}
+            {{#each burgers}} {{#unless this.devoured}}
             <li>
-                <p>
-                    <span class="label"></span> {{this.name?}}
-                </p>
-                <button data-id="{{this.id}}" class="delquote">Delete</button>
+                {{this.id}} {{this.burger_name}}
 
-                <a href="/{{this.name?}}">Update this quote</a>
+                <form action="/{{this.id}}?_method=PUT" method="POST">
+                    <input type="hidden" name="devoured" value="true">
+                    <button class="btn-primary" type="submit">Devour It!</button>
+                </form>
             </li>
-            {{/each}}
+            {{/unless}} {{/each}}
         </ul>
     </div>
-    <div class="formInput">
-        <label for="burger">Add a burger that you want to eat!</label>
-        <input type="text" id="burger" name="burger">
+    <div>
+        <h2>Burgers That Have Been Eaten!</h2>
+
+        {{#each burgers}} {{#if this.devoured}}
+        <li>
+            {{this.id}} {{this.burger_name}}
+
+        </li>
+        {{/if}} {{/each}}
     </div>
 
     <div class="formInput">
 
-        <button type="submit" class="addBurger">Submit</button>
-        <label for="devoured"></label>
+        <h2>Add A Burger!</h2>
+
+        <form class="create-update-form" action="/" method="POST">
+
+            <div class="form-group">
+                <p>Enter a burger you want to order and click the Submit Order button.</p>
+                <input type="text" id="ca" name="burger_name">
+            </div>
+
+            <button class="btn-primary" type="submit">Submit Order</button>
+        </form>
     </div>
 </form>
