@@ -28,7 +28,7 @@ router.put("/api/burgers/:name?", function(req, res){
         },
         condition, function(result){
             if(result.changedRows === 0){
-                return res.status(404).end();
+                return res.redirect("/");
             }
             res.status(200).end();
         }
