@@ -13,13 +13,13 @@ router.get("/", function(req, res){
 });
 
 router.post("/api/burgers", function(req, res){
-    burger.insertOne(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], function(result){
+    burger.insertOne(["burger_name"], [req.body.name], function(result){
         res.json({ id: result.insertId });
     });
 });
 
-router.put("/api/burgers/:name?", function(req, res){
-    var condition = "name = " + req.params.name;
+router.put("/api/burgers/:id", function(req, res){
+    var condition = "id = " + req.params.id;
     console.log("condition", condition);
 
     burger.updateOne(
@@ -28,12 +28,15 @@ router.put("/api/burgers/:name?", function(req, res){
         },
         condition, function(result){
             if(result.changedRows === 0){
-                return res.redirect("/");
+                return res.status(404).end();
             }
             res.status(200).end();
         }
     );
 });
+
+  
+
 
 //Export routes for server js to use
 module.exports = router;

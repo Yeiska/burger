@@ -4,46 +4,39 @@
 
 <form class="form">
     <div></div>
-    <img src="https://media.istockphoto.com/photos/double-cheese-and-bacon-cheeseburger-picture-id511484502?k=6&m=511484502&s=612x612&w=0&h=2d8oTGH_E7KHkd4TIdftWIxjLsBP3CfdF44zy65FD0o=" id="myBurger"">
+    <img src="https://media.istockphoto.com/photos/double-cheese-and-bacon-cheeseburger-picture-id511484502?k=6&m=511484502&s=612x612&w=0&h=2d8oTGH_E7KHkd4TIdftWIxjLsBP3CfdF44zy65FD0o="
+        id="myBurger" ">
     <div>
         <h2>Burgers Available To Eat!</h2>
         <ul>
-            {{#each burgers}} {{#unless this.devoured}}
-            <li>
-                {{this.id}} {{this.burger_name}}
-
-                <form action="/api/burgers/:name?" method="PUT">
-                    <input type="hidden" name="devoured" value="true">
-                    <button class="btn-primary" type="submit">Devour It!</button>
-                </form>
-            </li>
+            {{#each burgers}} {{#unless devoured}}
+                {{> burgers/undevoured-block devoured=true}}    
             {{/unless}} {{/each}}
         </ul>
     </div>
     <div>
         <h2>Burgers That Have Been Eaten!</h2>
 
-        {{#each burgers}} {{#if this.devoured}}
-        <li>
-            {{this.id}} {{this.burger_name}}
-
-        </li>
-        {{/if}} {{/each}}
+      {{#each burgers}} 
+         {{#if devoured}}
+           {{> burgers/devoured-block}}
+         {{/if}}
+      {{/each}}
     </div>
 
 
-    <div class="formInput">
+    <div class="formInput ">
 
         <h2>Add A Burger!</h2>
 
-        <form class="create-update-form" action="/api/burgers" method="POST">
+        <form class="create-update-form " action="/api/burgers " method="POST ">
 
-            <div class="form-group">
+            <div class="form-group ">
                 <p>Enter a burger you want to order and click the Submit Order button.</p>
-                <input type="text" id="ca" name="burger_name">
+                <input type="text " id="ca " name="burger_name ">
             </div>
 
-            <button class="btn-primary" type="submit">Submit Order</button>
+            <button class="btn-primary " type="submit ">Submit Order</button>
         </form>
     </div>
 </form>
