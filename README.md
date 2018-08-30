@@ -1,18 +1,6 @@
-# FriendFinder
-* Create a Friend Finder app (essentially a dating app but for friends) using Node and Express servers. The user enters the page that leads to a survey. When the user submits the survey, they are matched with a "friend" that has the closest match to their personality.
+# burger
 
-## Screen Shots
-### Home page
-![Friend Finder home page Image](app/public/img/home.png)
-### api Fiends data
-![Api Friend Data Image](app/public/img/apiFiends.png)
-### Survey page
-![Survey Image](app/public/img/Survey.png)
-### Match
-![Match Image](app/public/img/match.png)
-
-## Technologies used
-* Node.js
-* body-parager NPM Package - https://www.npmjs.com/package/inquirer
-* express NPM Package - https://www.npmjs.com/package/express
-* path NPM Package - https://www.npmjs.com/package/path
+# How The App Should Work
+Eat-Da-Burger! is a restaurant app that lets users input the names of burgers they'd like to eat. Whenever a user submits a burger's name, your app will display the burger on the left side of the page -- waiting to be devoured. Each burger in the waiting area also has a Devour it! button. When the user clicks it, the burger will move to the right side of the page. Your app will store every burger in a database, whether devoured or not.
+### app page
+![app Image](/public/assets/img/app.png)
