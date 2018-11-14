@@ -5,14 +5,14 @@ Eat-Da-Burger! is a restaurant app that lets users input the names of burgers th
 ### app page
 ![app Image](public/assets/img/burgerPage.png)
 ## Technologies used:
-Node.js
-Handlebars.js
-MVC
-ORM
-MySql
-Bootstrap
-jQuery
-CSS
+#### Node.js
+#### Handlebars.js
+#### MVC
+#### ORM
+#### MySql
+#### Bootstrap
+#### jQuery
+#### CSS
 
 ### App Link to the code
 https://github.com/Yeiska/burger
