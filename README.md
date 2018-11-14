@@ -18,4 +18,4 @@ CSS
 https://github.com/Yeiska/burger
 
 ### App Link to deploy
-![app link](https://infinite-caverns-91282.herokuapp.com/)
+(https://infinite-caverns-91282.herokuapp.com/)
